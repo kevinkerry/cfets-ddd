@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cwap>
+	<authors>
+		<author name="davidlin" email="linteng_zh@chinamoney.com.cn" />
+	</authors>
+	
+	<update author="davidlin" since="0.1.2.0" update="2016-03-17">
+		<items>
+			<item desc="对资源类型通过配置定义，将资源类型信息上传到服务端，更改上传到服务端的信息结构" source="CWAP" />
+			<file src="KccltHelper.java" type="M" />
+			<file src="KcConfig.java" type="M" />
+			<file src="bean/FIleInfo.java" type="M" />
+			<file src="job/ShareDataJob.java" type="M" />
+			<item desc="提供下载功能，资源文件夹下去除子目录分类，并上传服务器相关信息" source="CWAP" />
+			<file src="KccltHelper.java" type="M" />
+			<file src="job/ShareDataJob.java" type="M"/>
+			<dir src ="servlet" type="N" />
+		</items>
+
+	</update>
+	
+	<update author="davidlin" since="0.1.1.0" update="2016-03-06">
+		<items>
+			<item desc="实现知识库客户端基本功能：1。增量扫描资源文件，生成文件索引。2.上传文件索引信息至服务端" source="CWAP" />
+			<dir src="kcclt" type="N" />
+			<dir src="kcclt/bean" type="N" />
+			<dir src="kcclt/service" type="N" />
+		</items>
+	</update>
+	
+	<update author="davidlin" since="2.2.1.0" update="2016-02-23">
+		<items>
+			<item desc="创建起始版本,cwap知识库客户端模型" source="CWAP" />
+		</items>
+	</update>
+</cwap>

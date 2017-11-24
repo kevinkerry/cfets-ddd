@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cfets.agg</groupId>
+	<artifactId>cfets-ddd</artifactId>
+	<version>0.1.1.0</version>
+	<name>交易中心领域工程核心技术组件</name>
+	<packaging>pom</packaging>
+
+	<properties>
+		<cwap-site-address>cwap.cfets.com</cwap-site-address>
+		<cwap-repo-address>http://200.31.147.144:8081/artifactory</cwap-repo-address>
+		<!-- <cwap-repo-address>http://200.31.180.110:8081/artifactory</cwap-repo-address> -->
+		<cwap-ci-address>http://200.31.180.110:8080</cwap-ci-address>
+		<ts-repo-address>http://200.31.154.183:8081/nexus/content/repositories/ts-repo</ts-repo-address>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<developers>
+
+		<developer>
+			<id>jian.li</id>
+			<name>李戬</name>
+			<email>lijian_zh@chinamoney.com.cn</email>
+			<organization>中汇公司/信息系统项目群</organization>
+		</developer>
+
+	</developers>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor_2.11</artifactId>
+			<version>2.5.6</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-testkit_2.11</artifactId>
+			<version>2.5.6</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-slf4j_2.11</artifactId>
+			<version>2.5.6</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>3.2.13.RELEASE</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.13</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.12</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.7</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>artifactory</name>
+			<url>${cwap-repo-address}/repo</url>
+		</repository>
+		<repository>
+			<id>ts-repo</id>
+			<name>nexus</name>
+			<url>${ts-repo-address}</url>
+		</repository>
+		<repository>
+			<id>ts-snapshots</id>
+			<url>http://200.31.154.183:8081/nexus/content/repositories/ts-snapshots/</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>artifactory-plugin</id>
+			<name>plugin artifactory</name>
+			<url>${cwap-repo-address}/repo/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<contributors>
+
+	</contributors>
+
+	<mailingLists>
+		<mailingList>
+			<name>boqing.shen</name>
+			<subscribe>shenboqing_zh@chinamoney.com.cn</subscribe>
+			<unsubscribe>shenboqing_zh@chinamoney.com.cn</unsubscribe>
+			<post>shenboqing_zh@chinamoney.com.cn</post>
+		</mailingList>
+	</mailingLists>
+
+	<!-- <distributionManagement> <repository> <id>cwap-local</id> <name>cwap-local</name> 
+		<url>${cwap-repo-address}/cwap-local</url> </repository> <site> <id>cwap-site</id> 
+		<url>dav:${cwap-site-address}/sites</url> </site> </distributionManagement> -->
+
+	<distributionManagement>
+		<repository>
+			<id>ts-repo</id>
+			<url>${ts-repo-address}</url>
+		</repository>
+		<snapshotRepository>
+			<id>ts-snapshots</id>
+			<url>http://200.31.154.183:8081/nexus/content/repositories/ts-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<profiles>
+		<profile>
+			<id>disable-javadoc-doclint</id>
+			<activation>
+				<jdk>[1.8,)</jdk>
+			</activation>
+			<properties>
+				<additionalparam>-Xdoclint:none</additionalparam>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<!-- make sure META-INF could be packaged -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+					<exclude>**/.svn/*</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<target>1.7</target>
+					<source>1.7</source>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<locales>zh_CN</locales>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<!-- <warSourceExcludes>*/lib/cwap-s-web-2.0.9.0.jar</warSourceExcludes> -->
+					<packagingExcludes>*/lib/cwap-s-web-2.0.8.0.jar</packagingExcludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.2</version>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.1.2</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>index</report>
+							<report>summary</report>
+							<report>project-team</report>
+							<!-- <report>dependencies</report> -->
+							<report>issue-tracking</report>
+							<!-- <report>license</report> -->
+							<report>cim</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+
+
+  <modules>
+    <module>cfets-ddd-core</module>
+    <module>cfets-ddd-test</module>
+  </modules>
+</project>

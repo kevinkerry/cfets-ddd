@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<project name="cwap" basedir="." default="build">
+	
+	<property file="cwap-build.properties" />
+	
+	<target name="unzip">
+  		<available file="cwap-build.properties" property="cwap-build.exist" /> 
+  		<echo>file exist : ${cwap-build.exist}</echo>   
+  	</target>
+
+	<target name="clean" depends="unzip">
+		<echo>delete http://svn.scm.cfets.com/svn/08_ARG/WebFrameworkProject/tags/${sonar.projectName}/${pom_version}</echo>
+		<exec executable="cmd.exe">
+            <arg line="/c svn delete http://svn.scm.cfets.com/svn/08_ARG/WebFrameworkProject/tags/${sonar.projectName}/${pom_version} -m 'delete' "/>
+		</exec>	
+	</target>
+	
+	<target name="mkdir" depends="clean">
+			<echo>mkdir http://svn.scm.cfets.com/svn/08_ARG/WebFrameworkProject/tags/${sonar.projectName}</echo>
+			<exec executable="cmd.exe">
+				<arg line="/c svn mkdir http://svn.scm.cfets.com/svn/08_ARG/WebFrameworkProject/tags/${sonar.projectName} -m 'create file ${sonar.projectName}' "/>
+			</exec>	
+		</target>
+	
+	<target name="build" depends="mkdir">
+		<echo>${sonar.projectName} will be tag of svn..</echo>
+		<echo>source file : http://svn.scm.cfets.com/svn/08_ARG/WebFrameworkProject/trunk/cwap/${sonar.projectName}</echo>
+		<echo>goal file : http://svn.scm.cfets.com/svn/08_ARG/WebFrameworkProject/tags/${sonar.projectName}/${pom_version}</echo>
+		<exec executable="cmd.exe">
+            <arg line="/c svn cp http://svn.scm.cfets.com/svn/08_ARG/WebFrameworkProject/trunk/cwap/${sonar.projectName} http://svn.scm.cfets.com/svn/08_ARG/WebFrameworkProject/tags/${sonar.projectName}/${pom_version} -m 'release ${pom_version}' "/>
+		</exec>
+	</target>
+	
+</project>
