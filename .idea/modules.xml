@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cfets-ddd.iml" filepath="$PROJECT_DIR$/cfets-ddd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cfets-ddd-core/cfets-ddd-core.iml" filepath="$PROJECT_DIR$/cfets-ddd-core/cfets-ddd-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cfets-ddd-test/cfets-ddd-test.iml" filepath="$PROJECT_DIR$/cfets-ddd-test/cfets-ddd-test.iml" />
+    </modules>
+  </component>
+</project>

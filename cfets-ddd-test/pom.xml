@@ -2,16 +2,20 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.cfets.ddd</groupId>
+  <artifactId>cfets-ddd-test</artifactId>
+  <version>0.1.1.0</version>
+  <name>交易中心领域工程测试工程</name>
+  <url>http://maven.apache.org</url>
+
   <parent>
-    <groupId>com.cfets.agg</groupId>
+    <groupId>com.cfets.ddd</groupId>
     <artifactId>cfets-ddd</artifactId>
     <version>0.1.1.0</version>
   </parent>
-  <groupId>com.cfets.agg</groupId>
-  <artifactId>cfets-ddd-test</artifactId>
-  <version>0.1.1.0</version>
-  <name>cfets-ddd-test</name>
-  <url>http://maven.apache.org</url>
+
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
