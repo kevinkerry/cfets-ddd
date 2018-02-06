@@ -9,7 +9,7 @@
        \ \____/ \ \_\    \ \____/   \ \_\ \ `\____\      \ \____/ \ \____/ \ \____/
         \/___/   \/_/     \/___/     \/_/  \/_____/       \/___/   \/___/   \/___/
 
-     :: A new distributed component framework based on DDD and MSA for ®CFETS ©AGG  ${application.version}
+     :: A new distributed component framework based on DDD and MSA for ®CFETS ©AGG  0.1.1.0
 
 
-#基础开发框架和DDD设计开发过程管理平台
+# 基础开发框架和DDD设计开发过程管理平台
