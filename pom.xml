@@ -7,6 +7,7 @@
     <artifactId>cfets-ddd</artifactId>
     <version>0.1.1.0</version>
     <name>交易中心领域工程核心技术组件</name>
+    <description>领域工程建设标准工程</description>
     <packaging>pom</packaging>
 
     <!--Spring Boot 是DDD的事件驱动架构的父工程-->
@@ -19,12 +20,26 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+
+    <modules>
+        <module>cfets-ddd-core</module>
+        <module>cfets-ddd-test</module>
+        <module>cfets-ddd-mgmt</module>
+        <module>ddd-d-platform</module>
+        <module>ddd-p-platform</module>
+        <module>ddd-dp-platform</module>
+        <module>cfets-ddd-plugin</module>
+        <module>cfets-ddd-domain</module>
+    </modules>
+
+
     <properties>
-        <cwap-site-address>cwap.cfets.com</cwap-site-address>
-        <cwap-repo-address>http://200.31.147.144:8081/artifactory</cwap-repo-address>
-        <!-- <cwap-repo-address>http://200.31.180.110:8081/artifactory</cwap-repo-address> -->
-        <cwap-ci-address>http://200.31.180.110:8080</cwap-ci-address>
-        <ts-repo-address>http://200.31.154.183:8081/nexus/content/repositories/ts-repo</ts-repo-address>
+        <cfets.ddd.version>0.1.1.0</cfets.ddd.version>
+        <cfets.ddd.site.address>www.chinamoney.com.cn</cfets.ddd.site.address>
+        <!--<cwap-repo-address>http://200.31.147.144:8081/artifactory</cwap-repo-address>-->
+        <!--&lt;!&ndash; <cwap-repo-address>http://200.31.180.110:8081/artifactory</cwap-repo-address> &ndash;&gt;-->
+        <!--<cwap-ci-address>http://200.31.180.110:8080</cwap-ci-address>-->
+        <!--<ts-repo-address>http://200.31.154.183:8081/nexus/content/repositories/ts-repo</ts-repo-address>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -73,6 +88,13 @@
             <version>1.5.8.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.axonframework/axon-core -->
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-core</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>com.lmax</groupId>
@@ -104,6 +126,15 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+            <scope>provided</scope>
+        </dependency>
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -128,33 +159,41 @@
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
-
+        <!--标准数据源:为监控而生的数据库连接池-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.6</version>
+            <scope>provided</scope>
+        </dependency>
 
 
     </dependencies>
 
     <repositories>
         <repository>
-            <id>central</id>
-            <name>artifactory</name>
-            <url>${cwap-repo-address}/repo</url>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
         <repository>
-            <id>ts-repo</id>
-            <name>nexus</name>
-            <url>${ts-repo-address}</url>
-        </repository>
-        <repository>
-            <id>ts-snapshots</id>
-            <url>http://200.31.154.183:8081/nexus/content/repositories/ts-snapshots/</url>
+            <id>sonatype-public</id>
+            <name>Sonatype public repository</name>
+            <url>http://oss.sonatype.org/content/groups/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
-            <id>artifactory-plugin</id>
-            <name>plugin artifactory</name>
-            <url>${cwap-repo-address}/repo/</url>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </pluginRepository>
     </pluginRepositories>
 
@@ -217,20 +256,7 @@
             </properties>
         </profile>
 
-        <profile>
-            <repositories>
-                <repository>
-                    <id>spring-releases</id>
-                    <url>https://repo.spring.io/libs-release</url>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>spring-releases</id>
-                    <url>https://repo.spring.io/libs-release</url>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
+
     </profiles>
 
     <build>
@@ -270,15 +296,6 @@
                 <version>3.3</version>
                 <configuration>
                     <locales>zh_CN</locales>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.1.1</version>
-                <configuration>
-                    <!-- <warSourceExcludes>*/lib/cwap-s-web-2.0.9.0.jar</warSourceExcludes> -->
-                    <packagingExcludes>*/lib/cwap-s-web-2.0.8.0.jar</packagingExcludes>
                 </configuration>
             </plugin>
             <plugin>
@@ -342,8 +359,5 @@
     </reporting>
 
 
-    <modules>
-        <module>cfets-ddd-core</module>
-        <module>cfets-ddd-test</module>
-    </modules>
+
 </project>

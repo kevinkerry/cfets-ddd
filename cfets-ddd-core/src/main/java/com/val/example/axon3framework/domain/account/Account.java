@@ -20,7 +20,7 @@ import com.val.example.axon3framework.coreapi.WithdrawMoneyCommand;
 import com.val.example.axon3framework.domain.account.exceptions.OverdraftLimitExceededException;
 
 
-//@Aggregate(repository = "jpaAccountRepository") // To use your custom repository
+//@AggregateContext(repository = "jpaAccountRepository") // To use your custom repository
 @Aggregate
 
 @Entity

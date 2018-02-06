@@ -20,7 +20,7 @@ import com.val.example.axon3framework.transferapi.RequestedMoneyTransferEvent;
 
 //import lombok.NoArgsConstructor;
 
-//@Aggregate(repository = "jpaMoneyTransferRepository") // To use your own custom repo
+//@AggregateContext(repository = "jpaMoneyTransferRepository") // To use your own custom repo
 @Aggregate
 @Entity
 public class MoneyTransfer {

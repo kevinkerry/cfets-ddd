@@ -4,7 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cfets-ddd.iml" filepath="$PROJECT_DIR$/cfets-ddd.iml" />
       <module fileurl="file://$PROJECT_DIR$/cfets-ddd-core/cfets-ddd-core.iml" filepath="$PROJECT_DIR$/cfets-ddd-core/cfets-ddd-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cfets-ddd-domain/cfets-ddd-domain.iml" filepath="$PROJECT_DIR$/cfets-ddd-domain/cfets-ddd-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cfets-ddd-plugin/cfets-ddd-plugin.iml" filepath="$PROJECT_DIR$/cfets-ddd-plugin/cfets-ddd-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/cfets-ddd-test/cfets-ddd-test.iml" filepath="$PROJECT_DIR$/cfets-ddd-test/cfets-ddd-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddd-d-platform/ddd-d-platform.iml" filepath="$PROJECT_DIR$/ddd-d-platform/ddd-d-platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddd-dp-platform/ddd-dp-platform.iml" filepath="$PROJECT_DIR$/ddd-dp-platform/ddd-dp-platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddd-p-platform/ddd-p-platform.iml" filepath="$PROJECT_DIR$/ddd-p-platform/ddd-p-platform.iml" />
     </modules>
   </component>
 </project>

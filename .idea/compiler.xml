@@ -7,13 +7,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cfets-ddd-core" />
+        <module name="cfets-ddd-domain" />
+        <module name="cfets-ddd-platform" />
+        <module name="cfets-ddd-plugin" />
         <module name="cfets-ddd-test" />
+        <module name="ddd-d-platform" />
+        <module name="ddd-dp-platform" />
+        <module name="ddd-p-platform" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cfets-ddd" target="1.8" />
       <module name="cfets-ddd-core" target="1.8" />
+      <module name="cfets-ddd-domain" target="1.8" />
+      <module name="cfets-ddd-mgmt" target="1.8" />
+      <module name="cfets-ddd-platform" target="1.8" />
+      <module name="cfets-ddd-plugin" target="1.8" />
       <module name="cfets-ddd-test" target="1.8" />
+      <module name="ddd-d-platform" target="1.8" />
+      <module name="ddd-dp-platform" target="1.8" />
+      <module name="ddd-p-platform" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
