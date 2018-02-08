@@ -12,7 +12,7 @@
      :: A new distributed component framework based on DDD and MSA for ®CFETS ©AGG  0.1.1.0
 
 
-# 基础开发框架和DDD设计开发过程管理平台
+# ®孔明 -->基础开发框架和DDD设计开发过程管理平台
 
 
 
